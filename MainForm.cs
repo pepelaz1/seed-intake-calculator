@@ -56,8 +56,8 @@ public sealed class MainForm : Form
         var pendingCard = new Card { Bounds = new Rectangle(24, 400, 300, 130) };
         Controls.Add(pendingCard);
         pendingCard.Controls.Add(TextLabel("Остальные показатели", 20, 10, 260, 25, 11, Ink, FontStyle.Bold));
-        pendingCard.Controls.Add(TextLabel("4 из 5 правил ещё не переданы.", 20, 41, 260, 21, 9, Muted));
-        pendingCard.Controls.Add(TextLabel("После получения диапазонов и ставок\nих можно добавить в расчёт.", 20, 67, 260, 48, 9, Muted));
+        pendingCard.Controls.Add(TextLabel("Сейчас используется только влажность.", 20, 41, 260, 21, 9, Muted));
+        pendingCard.Controls.Add(TextLabel("Расчёт можно расширить новыми\nпоказателями и шкалами скидок.", 20, 67, 260, 48, 9, Muted));
 
         Controls.Add(TextLabel("Результат", 350, 100, 300, 31, 15, Ink, FontStyle.Bold));
         var resultCard = new Card { Bounds = new Rectangle(350, 140, 586, 150) };
@@ -89,7 +89,7 @@ public sealed class MainForm : Form
             var accepted = MoistureCalculator.CalculateAcceptedWeight(weightInput.Value, discount);
             acceptedValue.Text = $"{accepted:N3} кг";
             discountValue.Text = $"Скидка по влажности {discount:0.##} % · удержано {weightInput.Value - accepted:N3} кг";
-            errorLabel.Text = "Расчёт демонстрирует только скидку по влажности. Итог для всех 5 показателей требует полного ТЗ.";
+            errorLabel.Text = "Демонстрация рассчитывает только скидку по влажности; дополнительные показатели пока не учтены.";
             RenderBreakdown(moistureInput.Value, discount);
         }
         catch (ArgumentOutOfRangeException)
