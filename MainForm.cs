@@ -31,7 +31,7 @@ public sealed class MainForm : Form
         Controls.Add(header);
         header.Controls.Add(TextLabel("SEED / INTAKE", 24, 11, 250, 20, 9, Accent, FontStyle.Bold));
         header.Controls.Add(TextLabel("Приёмка семян", 24, 35, 530, 38, 21, Ink, FontStyle.Bold));
-        header.Controls.Add(TextLabel("Демонстрационный расчёт по формуле заказчика", 588, 42, 348, 24, 10, Muted, FontStyle.Regular, ContentAlignment.MiddleRight));
+        header.Controls.Add(TextLabel("Расчёт зачётного веса по влажности", 588, 42, 348, 24, 10, Muted, FontStyle.Regular, ContentAlignment.MiddleRight));
 
         var inputHeading = TextLabel("Исходные данные", 24, 100, 300, 31, 15, Ink, FontStyle.Bold);
         Controls.Add(inputHeading);
